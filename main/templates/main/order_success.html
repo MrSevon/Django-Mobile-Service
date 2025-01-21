@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="order-success-container">
+    <h1>Спасибо за ваш заказ!</h1>
+    <p>Мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
+    <a href="/" class="btn-home">Вернуться на главную</a>
+</div>
+
+<style>
+.order-success-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.order-success-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.order-success-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-home {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-home:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+</style>
+{% endblock %}

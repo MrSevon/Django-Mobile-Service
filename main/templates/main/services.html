@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="services-container">
+    <h1>Наши Услуги</h1>
+    <div class="services-grid">
+        {% for service in services %}
+        <div class="service-card">
+            <img src="{{ service.image.url }}" alt="{{ service.name }}">
+            <h2>{{ service.name }}</h2>
+            <p>Цена: {{ service.price }} рублей</p>
+            <button class="add-to-order" data-name="{{ service.name }}" data-price="{{ service.price }}">
+                Добавить в заказ
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+	
+<script src="{% static 'main/js/services.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="order-container">
+    <h1>Оформление заказа</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="order-items">Список товаров:</label>
+            <ul id="order-items"></ul>
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="items" id="id_items">
+            <input type="hidden" name="quantities" id="id_quantities">
+        </div>
+        <div class="form-group">
+            <label for="id_customer_name">Имя клиента:</label>
+            <input type="text" name="customer_name" id="id_customer_name" required>
+        </div>
+        <div class="form-group">
+            <label for="id_phone_number">Номер телефона:</label>
+            <input type="text" name="phone_number" id="id_phone_number" required>
+        </div>
+        <div class="form-group">
+            <label for="id_additional_info">Дополнительная информация:</label>
+            <textarea name="additional_info" id="id_additional_info"></textarea>
+        </div>
+        <button type="submit" class="btn-order">Заказать</button>
+    </form>
+</div>
+
+<script src="{% static 'main/js/order.js' %}"></script>
+{% endblock %}
